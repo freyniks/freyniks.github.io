@@ -1,81 +1,311 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نص عربي مع تعريفات</title>
+    <title>نص عربي مع نوافذ منبثقة</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 2;
-            text-align: center;
-            margin: 100px;
+            /* Provide extra space so tooltips are fully visible */
+            margin: 220px 50px 50px 50px;
+            font-family: sans-serif;
+            line-height: 1.8;
+            direction: rtl; /* Right-to-left text */
         }
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 200px;
-            background-color: lightyellow;
-            color: black;
-            text-align: center;
-            padding: 5px;
-            border-radius: 5px;
+
+        /* The hidden tooltip container */
+        #tooltip {
             position: absolute;
-            z-index: 1;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0px 0px 5px gray;
-            font-size: 14px;
+            display: none;
+            width: 200px; /* max width 200px */
+            border: 1px solid #333;
+            padding: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-align: right; /* Align text to right for Arabic */
         }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
-        .tooltip:hover {
-            font-weight: bold;
-        }
-        .proper-name .tooltiptext {
-            background-color: lightblue;
+
+        /* Just to distinguish normal text styling */
+        span.word {
+            cursor: pointer; 
         }
     </style>
 </head>
 <body>
-    <p>
-        <span class="tooltip">قرّرت<span class="tooltiptext">(فعل) يعني أخذ قرار. مثال: قرّرت السفر إلى مصر.</span></span>
-        حينها
-        <span class="tooltip">زيارة<span class="tooltiptext">(اسم) الذهاب إلى مكان ما. مثال: قمتُ بزيارة جدتي أمس.</span></span>
-        <span class="tooltip">صديق<span class="tooltiptext">(اسم) شخص تحبه وتثق به. مثال: لدي صديق جيد.</span></span>
-        <span class="tooltip">الطفولة<span class="tooltiptext">(اسم) الفترة الأولى من الحياة. مثال: كانت طفولتي سعيدة.</span></span>
-        الذي
-        <span class="tooltip">أصبح<span class="tooltiptext">(فعل) يعني تغيّر إلى حالة جديدة. مثال: أصبح الجو بارداً.</span></span>
-        <span class="tooltip">طبيب<span class="tooltiptext">(اسم) شخص يعالج المرضى. مثال: ذهبت إلى طبيب الأسنان.</span></span>
-        <span class="tooltip">تجميل<span class="tooltiptext">(اسم) تحسين الشكل والمظهر. مثال: أجرت عملية تجميل للأنف.</span></span>
-        ،
-        <span class="tooltip">فاقترح<span class="tooltiptext">(فعل) يعني عرض فكرة أو نصيحة. مثال: اقترح عليَّ صديقي أن أدرس الطب.</span></span>
-        عليَّ
-        <span class="tooltip">حقن<span class="tooltiptext">(اسم) إدخال مادة في الجسم بواسطة إبرة. مثال: أخذت حقنة في المستشفى.</span></span>
-        <span class="tooltip">البوتوكس<span class="tooltiptext proper-name">(اسم) مادة تُستخدم لتجميل الوجه. مثال: استخدمت بعض النساء البوتوكس لتقليل التجاعيد.</span></span>
-        للتقليل
-        من
-        <span class="tooltip">ظهور<span class="tooltiptext">(اسم) يعني أن يصبح الشيء مرئياً. مثال: ظهور الشمس في الصباح جميل.</span></span>
-        <span class="tooltip">التجاعيد<span class="tooltiptext">(اسم) خطوط تظهر على الجلد مع التقدم في العمر. مثال: أمي تحاول تقليل التجاعيد باستخدام الكريمات.</span></span>
-        ،
-        وقال لي
-        <span class="tooltip">إن<span class="tooltiptext">(أداة) تربط بين جملتين. مثال: قال لي إن الطقس جميل اليوم.</span></span>
-        <span class="tooltip">هذه<span class="tooltiptext">(أداة إشارة) تشير إلى شيء قريب. مثال: هذه حقيبتي.</span></span>
-        <span class="tooltip">الإجراءات<span class="tooltiptext">(اسم) تعني الخطوات التي يتم القيام بها لتنفيذ شيء ما. مثال: الإجراءات الطبية تحتاج إلى دقة.</span></span>
-        <span class="tooltip">برأيه<span class="tooltiptext">(اسم) يعني ما يعتقده الشخص. مثال: في رأيي، القراءة مفيدة.</span></span>
-        <span class="tooltip">تكون<span class="tooltiptext">(فعل) تعني الوجود أو الحصول على شيء. مثال: تكون الحياة جميلة عند السفر.</span></span>
-        أكثر
-        <span class="tooltip">فاعلية<span class="tooltiptext">(اسم) تعني تحقيق نتيجة جيدة. مثال: هذه الخطة أكثر فاعلية.</span></span>
-        عند البدء
-        <span class="tooltip">فيها<span class="tooltiptext">(ضمير) تعني داخلها أو خلالها. مثال: في العمل، يجب أن نكون منظمين.</span></span>
-        <span class="tooltip">مبكراً<span class="tooltiptext">(حال) في وقت مبكر. مثال: استيقظتُ مبكراً اليوم.</span></span>
-        .
-    </p>
+
+<div id="tooltip"></div>
+
+<p style="text-align: justify;">
+    <!-- 
+       Each relevant word (noun, verb, adjective, adverb) is wrapped in a span with onmouseover and onmouseout events.
+       The function showTooltip(event, pos, definition, example, bgColor) is defined below.
+       Proper names (brand names) use lightblue; all others use lightyellow.
+    -->
+
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'اتخذ قراراً بشأن أمر ما', 'قرّرتُ الدراسة الآن.', 'lightyellow')" 
+      onmouseout="hideTooltip()">قرّرت</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'ظرف', 'في ذلك الوقت', 'سافرت حينها إلى بيروت.', 'lightyellow')" 
+      onmouseout="hideTooltip()">حينها</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الذهاب إلى مكان أو شخص', 'قمت بزيارة صديقي.', 'lightyellow')" 
+      onmouseout="hideTooltip()">زيارة</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'شخص قريب تربطه بك علاقة ود', 'صديقي هو مصدر دعمي.', 'lightyellow')" 
+      onmouseout="hideTooltip()">صديق</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'مرحلة العمر من الولادة حتى البلوغ', 'أتذكر أيام الطفولة بسعادة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الطفولة</span> 
+    الذي 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'تحوّل أو تغيّر إلى حالة جديدة', 'أصبح الجوّ بارداً.', 'lightyellow')" 
+      onmouseout="hideTooltip()">أصبح</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'شخص مختص بعلاج المرضى', 'ذهبت إلى الطبيب لإجراء فحص.', 'lightyellow')" 
+      onmouseout="hideTooltip()">طبيب</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'إجراء يهدف لتحسين الشكل أو المظهر', 'تجميل الوجه يزيد الثقة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">تجميل</span>،
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'قدّم رأياً أو نصيحة', 'فاقترح صديقي الذهاب للتنزه.', 'lightyellow')" 
+      onmouseout="hideTooltip()">فاقترح</span> 
+    عليَّ 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'إدخال مادة سائلة إلى الجسم بواسطة إبرة', 'يجب أن تتم عملية الحقن بحذر.', 'lightyellow')" 
+      onmouseout="hideTooltip()">حقن</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم علم (علامة تجارية)', 'اسم تجاري لمادة تستخدم لإزالة التجاعيد', 'تستخدم البوتوكس في العيادات التجميلية.', 'lightblue')" 
+      onmouseout="hideTooltip()">البوتوكس</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'جعل الشيء أقل', 'نمارس الرياضة للتقليل من الوزن.', 'lightyellow')" 
+      onmouseout="hideTooltip()">للتقليل</span> 
+    من 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'بروز أو تجلّي شيء', 'أخفيتُ ظهور العيب بالمكياج.', 'lightyellow')" 
+      onmouseout="hideTooltip()">ظهور</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'خطوط وثنيات تظهر على الجلد', 'مع التقدم في العمر تزداد التجاعيد.', 'lightyellow')" 
+      onmouseout="hideTooltip()">التجاعيد</span>،
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'نطق أو عبّر بالكلام', 'قال المعلم: انتبهوا للدرس.', 'lightyellow')" 
+      onmouseout="hideTooltip()">وقال</span> 
+    لي 
+    إن 
+    هذه 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'خطوات أو تدابير متخذة لتحقيق هدف', 'يجب اتباع الإجراءات القانونية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الإجراءات</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'ما يعتقده الشخص أو يشعر به', 'برأيي، الحل الأفضل هو الصبر.', 'lightyellow')" 
+      onmouseout="hideTooltip()">برأيه</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'تحصل أو تحدث', 'تكون الأمور بخير إن تحلينا بالصبر.', 'lightyellow')" 
+      onmouseout="hideTooltip()">تكون</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'يدل على زيادة أو كثرة', 'هذا الكتاب أكثر فائدةً من غيره.', 'lightyellow')" 
+      onmouseout="hideTooltip()">أكثر</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'قدرة الشيء على إحداث التأثير المطلوب', 'فاعلية الدواء عالية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">فاعلية</span> 
+    عند 
+    البدء 
+    فيها 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'ظرف', 'في وقت باكر أو مبكر', 'استيقظت مبكراً اليوم.', 'lightyellow')" 
+      onmouseout="hideTooltip()">مبكراً</span>.
+    لم 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'أقتصر على شيء ولا أطلب المزيد', 'أكتفي بقراءة كتاب واحد.', 'lightyellow')" 
+      onmouseout="hideTooltip()">أكتفِ</span> 
+    بذلك، 
+    بل 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'استخدام الفرصة بأفضل طريقة', 'استغللت وقت الفراغ للدراسة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">استغللت</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'ظرف', 'كذلك أو بالإضافة', 'هو يتكلم الإنجليزية وأيضاً الفرنسية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">أيضاً</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'ما يحتاجه الإنسان من متطلبات', 'حاجتي للراحة كبيرة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">حاجتي</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'إجراء طبي أو منهجي محدد', 'خضعتُ لعملية جراحية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">لعملية</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'رفع أو نزع شيء من مكانه', 'تمت إزالة البقعة بالماء.', 'lightyellow')" 
+      onmouseout="hideTooltip()">إزالة</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'جزء زائد من النسيج في الأنف أو الحلق', 'أجريت عملية استئصال اللحمية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">اللحمية</span> 
+    من 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'عضو في الوجه للتنفس والشم', 'تنظيف الأنف ضروري للصحة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الأنف</span> 
+    و
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'فعل الشيء أو نهض للقيام به', 'وقمت بعمل الواجب.', 'lightyellow')" 
+      onmouseout="hideTooltip()">قمت</span> 
+    في 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الزمن أو المدة التي تقاس بالساعات والدقائق', 'الوقت ثمين.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الوقت</span> 
+    نفسه 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'إجراء أو فعل له خطوات', 'العملية التجميلية تحتاج إلى طبيب مختص.', 'lightyellow')" 
+      onmouseout="hideTooltip()">بعملية</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'متعلق بالتجميل وتحسين المظهر', 'العمليات التجميلية شائعة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">تجميلية</span> 
+    له، 
+    مما 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'سبّب لي حالة أو وضعاً', 'ذلك جعلني سعيداً.', 'lightyellow')" 
+      onmouseout="hideTooltip()">جعلني</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'أحس بشيء', 'أشعر بالألم في رأسي.', 'lightyellow')" 
+      onmouseout="hideTooltip()">أشعر</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الاطمئنان واليقين بالنفس', 'أجبت على الأسئلة بثقة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">بثقة</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'ذات الإنسان أو روحه', 'يجب أن يعرف المرء نفسه.', 'lightyellow')" 
+      onmouseout="hideTooltip()">نفس</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'زائدة عما هو موجود', 'أحتاج إلى موارد إضافية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">إضافية</span> 
+    أمام 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'جهاز أو سطح لعرض الصور والفيديو', 'أنظر إلى الشاشة باستمرار.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الشاشة</span>.
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'حكاية أو رواية لأحداث', 'قصتي طويلة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">قصتي</span> 
+    هذه 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'ترمز أو تعكس شيئاً', 'هذه اللوحة تمثل الطبيعة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">تمثل</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'قسم أو قطعة من كل', 'هذا الفصل جزء من الكتاب.', 'lightyellow')" 
+      onmouseout="hideTooltip()">جزءاً</span> 
+    من 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'حدث أو أمر بارز يمكن ملاحظته', 'تعد العواصف ظاهرة طبيعية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">ظاهرة</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'مستمرة في التطور أو التزايد', 'الأزمة آخذة في التفاقم.', 'lightyellow')" 
+      onmouseout="hideTooltip()">آخذة</span> 
+    في 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'التوسع أو الامتداد في نطاق معين', 'شهدت الفكرة انتشاراً واسعاً.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الانتشار</span> 
+    بين 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الذكور البالغون', 'يحظى الرجال بحقوق وواجبات.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الرجال</span> 
+    في 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الأرض وما عليها', 'العالم كبير ومتعدد الثقافات.', 'lightyellow')" 
+      onmouseout="hideTooltip()">العالم</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'منسوب إلى العرب أو متعلق بهم', 'العالم العربي مليء بالتنوع.', 'lightyellow')" 
+      onmouseout="hideTooltip()">العربي</span> 
+    وحول 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الأرض وما عليها', 'العالم كبير ومتعدد الثقافات.', 'lightyellow')" 
+      onmouseout="hideTooltip()">العالم</span>،
+    حيث 
+    لم 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'فعل', 'لم يعد = لم يصبح الأمر كذلك', 'لم تعد الفواكه رخيصة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">تعد</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'خطوات أو تدابير متخذة لتحقيق هدف', 'يجب اتباع الإجراءات القانونية.', 'lightyellow')" 
+      onmouseout="hideTooltip()">الإجراءات</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'صفة', 'متعلق بالتجميل وتحسين المظهر', 'العمليات التجميلية شائعة.', 'lightyellow')" 
+      onmouseout="hideTooltip()">التجميلية</span> 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'حصر الشيء على فئة أو شخص', 'لم يعد التعليم حكراً على الأغنياء.', 'lightyellow')" 
+      onmouseout="hideTooltip()">حكراً</span> 
+    على 
+    <span 
+      class="word" 
+      onmouseover="showTooltip(event, 'اسم', 'الإناث البالغات', 'النساء شقائق الرجال.', 'lightyellow')" 
+      onmouseout="hideTooltip()">النساء</span>.
+</p>
+
+<script>
+    // A simple JS tooltip system using one shared #tooltip div
+    function showTooltip(evt, pos, definition, example, bgColor) {
+        const tooltip = document.getElementById("tooltip");
+        tooltip.style.display = "block";
+        tooltip.style.backgroundColor = bgColor;
+        tooltip.style.left = (evt.pageX + 10) + "px";
+        tooltip.style.top = (evt.pageY + 10) + "px";
+        tooltip.innerHTML = 
+            "<strong>" + pos + ":</strong> " + definition + "<br/>" +
+            "<em>مثال: " + example + "</em>";
+    }
+
+    function hideTooltip() {
+        const tooltip = document.getElementById("tooltip");
+        tooltip.style.display = "none";
+        tooltip.innerHTML = "";
+    }
+</script>
+
 </body>
 </html>
