@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نص عربي مع تعريفات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 2;
+            text-align: center;
+            margin: 100px;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: lightyellow;
+            color: black;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 0px 5px gray;
+            font-size: 14px;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        .tooltip:hover {
+            font-weight: bold;
+        }
+        .proper-name .tooltiptext {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span class="tooltip">قرّرت<span class="tooltiptext">(فعل) يعني أخذ قرار. مثال: قرّرت السفر إلى مصر.</span></span>
+        حينها
+        <span class="tooltip">زيارة<span class="tooltiptext">(اسم) الذهاب إلى مكان ما. مثال: قمتُ بزيارة جدتي أمس.</span></span>
+        <span class="tooltip">صديق<span class="tooltiptext">(اسم) شخص تحبه وتثق به. مثال: لدي صديق جيد.</span></span>
+        <span class="tooltip">الطفولة<span class="tooltiptext">(اسم) الفترة الأولى من الحياة. مثال: كانت طفولتي سعيدة.</span></span>
+        الذي
+        <span class="tooltip">أصبح<span class="tooltiptext">(فعل) يعني تغيّر إلى حالة جديدة. مثال: أصبح الجو بارداً.</span></span>
+        <span class="tooltip">طبيب<span class="tooltiptext">(اسم) شخص يعالج المرضى. مثال: ذهبت إلى طبيب الأسنان.</span></span>
+        <span class="tooltip">تجميل<span class="tooltiptext">(اسم) تحسين الشكل والمظهر. مثال: أجرت عملية تجميل للأنف.</span></span>
+        ،
+        <span class="tooltip">فاقترح<span class="tooltiptext">(فعل) يعني عرض فكرة أو نصيحة. مثال: اقترح عليَّ صديقي أن أدرس الطب.</span></span>
+        عليَّ
+        <span class="tooltip">حقن<span class="tooltiptext">(اسم) إدخال مادة في الجسم بواسطة إبرة. مثال: أخذت حقنة في المستشفى.</span></span>
+        <span class="tooltip">البوتوكس<span class="tooltiptext proper-name">(اسم) مادة تُستخدم لتجميل الوجه. مثال: استخدمت بعض النساء البوتوكس لتقليل التجاعيد.</span></span>
+        للتقليل
+        من
+        <span class="tooltip">ظهور<span class="tooltiptext">(اسم) يعني أن يصبح الشيء مرئياً. مثال: ظهور الشمس في الصباح جميل.</span></span>
+        <span class="tooltip">التجاعيد<span class="tooltiptext">(اسم) خطوط تظهر على الجلد مع التقدم في العمر. مثال: أمي تحاول تقليل التجاعيد باستخدام الكريمات.</span></span>
+        ،
+        وقال لي
+        <span class="tooltip">إن<span class="tooltiptext">(أداة) تربط بين جملتين. مثال: قال لي إن الطقس جميل اليوم.</span></span>
+        <span class="tooltip">هذه<span class="tooltiptext">(أداة إشارة) تشير إلى شيء قريب. مثال: هذه حقيبتي.</span></span>
+        <span class="tooltip">الإجراءات<span class="tooltiptext">(اسم) تعني الخطوات التي يتم القيام بها لتنفيذ شيء ما. مثال: الإجراءات الطبية تحتاج إلى دقة.</span></span>
+        <span class="tooltip">برأيه<span class="tooltiptext">(اسم) يعني ما يعتقده الشخص. مثال: في رأيي، القراءة مفيدة.</span></span>
+        <span class="tooltip">تكون<span class="tooltiptext">(فعل) تعني الوجود أو الحصول على شيء. مثال: تكون الحياة جميلة عند السفر.</span></span>
+        أكثر
+        <span class="tooltip">فاعلية<span class="tooltiptext">(اسم) تعني تحقيق نتيجة جيدة. مثال: هذه الخطة أكثر فاعلية.</span></span>
+        عند البدء
+        <span class="tooltip">فيها<span class="tooltiptext">(ضمير) تعني داخلها أو خلالها. مثال: في العمل، يجب أن نكون منظمين.</span></span>
+        <span class="tooltip">مبكراً<span class="tooltiptext">(حال) في وقت مبكر. مثال: استيقظتُ مبكراً اليوم.</span></span>
+        .
+    </p>
+</body>
+</html>
