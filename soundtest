@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نص عربي مع تعريفات منبثقة</title>
+  <!-- ResponsiveVoice JS -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_KEY_HERE"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.8;
+      margin: 20px;
+      direction: rtl; /* Right-to-left layout for Arabic */
+    }
+    .word {
+      cursor: pointer;
+      position: relative;
+      margin: 0 3px;
+      display: inline-block;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      max-width: 200px;
+      background-color: lightyellow;
+      border: 1px solid #333;
+      padding: 8px;
+      border-radius: 4px;
+      z-index: 999;
+      font-size: 0.9rem;
+    }
+    /* For proper names or brand names (light blue) */
+    .tooltip.proper {
+      background-color: lightblue;
+    }
+    .tooltip.open {
+      display: block;
+    }
+    .close-btn {
+      float: left; 
+      margin-bottom: 5px;
+      cursor: pointer;
+      background: #ccc;
+      border-radius: 50%;
+      padding: 0 5px;
+    }
+    .tooltip p {
+      margin: 5px 0;
+    }
+    .tooltip button {
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function toggleTooltip(element) {
+    // Toggle visibility of the tooltip within the clicked element
+    let tooltip = element.querySelector('.tooltip');
+    if (tooltip.classList.contains('open')) {
+      tooltip.classList.remove('open');
+    } else {
+      // Close any other open tooltips (optional behavior)
+      document.querySelectorAll('.tooltip.open').forEach(t => t.classList.remove('open'));
+      tooltip.classList.add('open');
+    }
+  }
+
+  function closeTooltip(closeBtn) {
+    // Close the parent tooltip
+    closeBtn.parentElement.classList.remove('open');
+  }
+</script>
+
+<!-- 
+  Below is the text. Each word that is a noun, verb, adjective, or adverb
+  has been wrapped in a span with an embedded tooltip containing:
+    - short definition (تعريف)
+    - brief example (مثال)
+    - a button for TTS
+  Punctuation is left unwrapped so it remains normal text.
+-->
+
+<p style="text-align: justify;">
+
+  <!-- قرّرت (verb) -->
+  <span class="word" onclick="toggleTooltip(this)">
+    قرّرت
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> أخذتُ قراراً</p>
+      <p><strong>مثال:</strong> قرّرتُ الذهاب مبكراً</p>
+      <button onclick="responsiveVoice.speak('قرّرت','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <!-- حينها (adverb) -->
+  <span class="word" onclick="toggleTooltip(this)">
+    حينها
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> في ذلك الوقت</p>
+      <p><strong>مثال:</strong> تحدّثتُ معه حينها</p>
+      <button onclick="responsiveVoice.speak('حينها','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  زيارة
+  <span class="word" onclick="toggleTooltip(this)">
+    زيارة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الذهاب إلى مكان أو شخص</p>
+      <p><strong>مثال:</strong> قمتُ بزيارة المريض في المستشفى</p>
+      <button onclick="responsiveVoice.speak('زيارة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    صديق
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> شخص تربطك به علاقة ودّ</p>
+      <p><strong>مثال:</strong> تحدّثت مع صديقٍ قديم</p>
+      <button onclick="responsiveVoice.speak('صديق','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  الطفولة
+  <span class="word" onclick="toggleTooltip(this)">
+    الطفولة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> مرحلة ما قبل البلوغ</p>
+      <p><strong>مثال:</strong> ذكريات الطفولة جميلة</p>
+      <button onclick="responsiveVoice.speak('الطفولة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  الذي أصبح
+  <span class="word" onclick="toggleTooltip(this)">
+    أصبح
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> تحوّل إلى حالة جديدة</p>
+      <p><strong>مثال:</strong> أصبح الجوّ حاراً</p>
+      <button onclick="responsiveVoice.speak('أصبح','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    طبيب
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> شخص يمارس الطب</p>
+      <p><strong>مثال:</strong> استشرتُ طبيباً مختصاً</p>
+      <button onclick="responsiveVoice.speak('طبيب','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    تجميل
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> تحسين المظهر</p>
+      <p><strong>مثال:</strong> أجريتُ عملية تجميل</p>
+      <button onclick="responsiveVoice.speak('تجميل','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  ، ف
+  <span class="word" onclick="toggleTooltip(this)">
+    اقترح
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> قدّم رأياً أو فكرة</p>
+      <p><strong>مثال:</strong> اقترح عليّ حلاً مناسباً</p>
+      <button onclick="responsiveVoice.speak('اقترح','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  عليَّ
+
+  <span class="word" onclick="toggleTooltip(this)">
+    حقن
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> إدخال مادة بواسطة إبرة</p>
+      <p><strong>مثال:</strong> أخذ حقنةً في العضل</p>
+      <button onclick="responsiveVoice.speak('حقن','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    البوتوكس
+    <span class="tooltip proper">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> مادة تُستخدم للتجميل</p>
+      <p><strong>مثال:</strong> حقن البوتوكس تساعد في تقليل التجاعيد</p>
+      <button onclick="responsiveVoice.speak('البوتوكس','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    للتقليل
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> لجعل الشيء أقل</p>
+      <p><strong>مثال:</strong> أمارس الرياضة للتقليل من وزني</p>
+      <button onclick="responsiveVoice.speak('للتقليل','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  من
+
+  <span class="word" onclick="toggleTooltip(this)">
+    ظهور
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> بروز أو انكشاف شيء</p>
+      <p><strong>مثال:</strong> ظهور الشمس في الأفق</p>
+      <button onclick="responsiveVoice.speak('ظهور','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    التجاعيد
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> خطوط تظهر على الجلد</p>
+      <p><strong>مثال:</strong> لديه بعض التجاعيد حول عينيه</p>
+      <button onclick="responsiveVoice.speak('التجاعيد','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  ، و
+  <span class="word" onclick="toggleTooltip(this)">
+    قال
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> نطق أو تحدّث</p>
+      <p><strong>مثال:</strong> قال لي إنه موافق</p>
+      <button onclick="responsiveVoice.speak('قال','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  لي إن هذه
+
+  <span class="word" onclick="toggleTooltip(this)">
+    الإجراءات
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> خطوات أو تدابير</p>
+      <p><strong>مثال:</strong> اتّبع الإجراءات اللازمة</p>
+      <button onclick="responsiveVoice.speak('الإجراءات','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    برأيه
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> في اعتقاده</p>
+      <p><strong>مثال:</strong> برأيه هذا الأمر صحيح</p>
+      <button onclick="responsiveVoice.speak('برأيه','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    تكون
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> تتحقق أو تحدث</p>
+      <p><strong>مثال:</strong> قد تكون الفرصة مؤاتية</p>
+      <button onclick="responsiveVoice.speak('تكون','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    أكثر
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الزيادة عن غيره</p>
+      <p><strong>مثال:</strong> أحتاج وقتاً أكثر</p>
+      <button onclick="responsiveVoice.speak('أكثر','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    فاعلية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> قدرة على تحقيق النتائج</p>
+      <p><strong>مثال:</strong> فاعلية الدواء قوية</p>
+      <button onclick="responsiveVoice.speak('فاعلية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  عند
+
+  <span class="word" onclick="toggleTooltip(this)">
+    البدء
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الشروع في عمل ما</p>
+      <p><strong>مثال:</strong> تأخرنا في البدء بالعمل</p>
+      <button onclick="responsiveVoice.speak('البدء','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  فيها
+  <span class="word" onclick="toggleTooltip(this)">
+    مبكراً
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> في وقت سابق من المعتاد</p>
+      <p><strong>مثال:</strong> خرجتُ من المنزل مبكراً</p>
+      <button onclick="responsiveVoice.speak('مبكراً','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  . لم
+  <span class="word" onclick="toggleTooltip(this)">
+    أكتفِ
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> أتوقف عند حدّ معيّن</p>
+      <p><strong>مثال:</strong> لن أكتفي بهذا القدر</p>
+      <button onclick="responsiveVoice.speak('أكتفي','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  بذلك، بل
+  <span class="word" onclick="toggleTooltip(this)">
+    استغللت
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> استفدتُ من الفرصة</p>
+      <p><strong>مثال:</strong> استغللت وقت الفراغ للقراءة</p>
+      <button onclick="responsiveVoice.speak('استغللت','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    أيضاً
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> كذلك أو بالإضافة</p>
+      <p><strong>مثال:</strong> أريد شاياً وأيضاً قهوة</p>
+      <button onclick="responsiveVoice.speak('أيضاً','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  حاجتي
+  <span class="word" onclick="toggleTooltip(this)">
+    حاجتي
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الشيء الذي أحتاجه</p>
+      <p><strong>مثال:</strong> حاجتي للراحة كبيرة</p>
+      <button onclick="responsiveVoice.speak('حاجتي','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  ل
+  <span class="word" onclick="toggleTooltip(this)">
+    عملية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> جراحة أو إجراء طبي</p>
+      <p><strong>مثال:</strong> أحتاج لعملية في القلب</p>
+      <button onclick="responsiveVoice.speak('عملية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    إزالة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> رفع أو نزع الشيء</p>
+      <p><strong>مثال:</strong> إجراء إزالة الشعر</p>
+      <button onclick="responsiveVoice.speak('إزالة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    اللحمية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> زائدة أنفية (أدينويد)</p>
+      <p><strong>مثال:</strong> قد تسبّب اللحمية انسداداً</p>
+      <button onclick="responsiveVoice.speak('اللحمية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  من الأنف و
+  <span class="word" onclick="toggleTooltip(this)">
+    قمت
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> نفّذت أو فعلت</p>
+      <p><strong>مثال:</strong> قمت بإعداد الطعام</p>
+      <button onclick="responsiveVoice.speak('قمت','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  في
+  <span class="word" onclick="toggleTooltip(this)">
+    الوقت
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> فترة زمنية محدّدة</p>
+      <p><strong>مثال:</strong> ضيّعت الكثير من الوقت</p>
+      <button onclick="responsiveVoice.speak('الوقت','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  نفسه ب
+  <span class="word" onclick="toggleTooltip(this)">
+    عملية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> جراحة أو إجراء</p>
+      <p><strong>مثال:</strong> قام بعملية ناجحة</p>
+      <button onclick="responsiveVoice.speak('عملية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    تجميلية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> متعلّقة بتحسين المظهر</p>
+      <p><strong>مثال:</strong> هذه منتجات تجميلية مفيدة</p>
+      <button onclick="responsiveVoice.speak('تجميلية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  له، مما
+  <span class="word" onclick="toggleTooltip(this)">
+    جعلني
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> سبّب لي حالة</p>
+      <p><strong>مثال:</strong> جعلني الموقف سعيداً</p>
+      <button onclick="responsiveVoice.speak('جعلني','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    أشعر
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> أحسّ أو أدرك</p>
+      <p><strong>مثال:</strong> أشعر بالرضا الآن</p>
+      <button onclick="responsiveVoice.speak('أشعر','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  ب
+  <span class="word" onclick="toggleTooltip(this)">
+    ثقة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> إحساس بالأمان أو الاطمئنان</p>
+      <p><strong>مثال:</strong> تحدّث بثقة كبيرة</p>
+      <button onclick="responsiveVoice.speak('ثقة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    نفس
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الذات أو الروح</p>
+      <p><strong>مثال:</strong> يجب أن تهتمّ بنفسك</p>
+      <button onclick="responsiveVoice.speak('نفس','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    إضافية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> زائدة عن الحاجة</p>
+      <p><strong>مثال:</strong> لديّ نسخة إضافية</p>
+      <button onclick="responsiveVoice.speak('إضافية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  أمام الشاشة. 
+
+  <span class="word" onclick="toggleTooltip(this)">
+    قصتي
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الحكاية التي تخصّني</p>
+      <p><strong>مثال:</strong> قصتي ليست مثيرة</p>
+      <button onclick="responsiveVoice.speak('قصتي','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  هذه
+  <span class="word" onclick="toggleTooltip(this)">
+    تمثل
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> تجسّد أو تعبّر عن</p>
+      <p><strong>مثال:</strong> هذه اللوحة تمثّل الطبيعة</p>
+      <button onclick="responsiveVoice.speak('تمثل','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    جزءاً
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> قسم من كلّ</p>
+      <p><strong>مثال:</strong> قرأتُ جزءاً من الكتاب</p>
+      <button onclick="responsiveVoice.speak('جزءاً','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  من
+  <span class="word" onclick="toggleTooltip(this)">
+    ظاهرة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> أمر ملاحظ أو منتشر</p>
+      <p><strong>مثال:</strong> ظاهرة التدخين ضارّة</p>
+      <button onclick="responsiveVoice.speak('ظاهرة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    آخذة
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> مستمرّة أو متصاعدة</p>
+      <p><strong>مثال:</strong> الظاهرة آخذة في الازدياد</p>
+      <button onclick="responsiveVoice.speak('آخذة','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  في
+  <span class="word" onclick="toggleTooltip(this)">
+    الانتشار
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> التوسّع والامتداد</p>
+      <p><strong>مثال:</strong> الانتشار السريع للخبر</p>
+      <button onclick="responsiveVoice.speak('الانتشار','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  بين
+  <span class="word" onclick="toggleTooltip(this)">
+    الرجال
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> جمع رجل، الذكور البالغين</p>
+      <p><strong>مثال:</strong> الرجال في الاجتماع</p>
+      <button onclick="responsiveVoice.speak('الرجال','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  في
+  <span class="word" onclick="toggleTooltip(this)">
+    العالم
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الكرة الأرضية وكلّ ما فيها</p>
+      <p><strong>مثال:</strong> أرغب بالسفر حول العالم</p>
+      <button onclick="responsiveVoice.speak('العالم','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    العربي
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> متعلّق بالعرب أو باللغة العربية</p>
+      <p><strong>مثال:</strong> المجتمع العربي متنوّع</p>
+      <button onclick="responsiveVoice.speak('العربي','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  وحول
+  <span class="word" onclick="toggleTooltip(this)">
+    العالم
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> الكرة الأرضية وكلّ ما فيها</p>
+      <p><strong>مثال:</strong> السفر حول العالم</p>
+      <button onclick="responsiveVoice.speak('العالم','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  ، حيث لم
+  <span class="word" onclick="toggleTooltip(this)">
+    تعد
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> تصير أو تصبح</p>
+      <p><strong>مثال:</strong> قد تعد هذه فرصة ذهبية</p>
+      <button onclick="responsiveVoice.speak('تعد','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    الإجراءات
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> خطوات أو تدابير</p>
+      <p><strong>مثال:</strong> اتّبع الإجراءات اللازمة</p>
+      <button onclick="responsiveVoice.speak('الإجراءات','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    التجميلية
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> متعلّقة بتحسين المظهر</p>
+      <p><strong>مثال:</strong> هذه عملية تجميلية ضرورية</p>
+      <button onclick="responsiveVoice.speak('التجميلية','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  <span class="word" onclick="toggleTooltip(this)">
+    حكراً
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> احتكار أو حصر للشيء</p>
+      <p><strong>مثال:</strong> هذا الحقّ ليس حكراً على أحد</p>
+      <button onclick="responsiveVoice.speak('حكراً','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  على
+  <span class="word" onclick="toggleTooltip(this)">
+    النساء
+    <span class="tooltip">
+      <span class="close-btn" onclick="closeTooltip(this)">x</span>
+      <p><strong>تعريف:</strong> جمع امرأة</p>
+      <p><strong>مثال:</strong> تعمل النساء في مجالات عديدة</p>
+      <button onclick="responsiveVoice.speak('النساء','Arabic Female')">🔊</button>
+    </span>
+  </span>
+
+  .
+</p>
+
+</body>
+</html>
