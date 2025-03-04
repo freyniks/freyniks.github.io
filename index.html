@@ -1,311 +1,189 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>نص عربي مع نوافذ منبثقة</title>
-    <style>
-        body {
-            /* Provide extra space so tooltips are fully visible */
-            margin: 220px 50px 50px 50px;
-            font-family: sans-serif;
-            line-height: 1.8;
-            direction: rtl; /* Right-to-left text */
-        }
-
-        /* The hidden tooltip container */
-        #tooltip {
-            position: absolute;
-            display: none;
-            width: 200px; /* max width 200px */
-            border: 1px solid #333;
-            padding: 8px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            z-index: 9999;
-            text-align: right; /* Align text to right for Arabic */
-        }
-
-        /* Just to distinguish normal text styling */
-        span.word {
-            cursor: pointer; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Language Learner Instructional Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    .tooltip-box {
+      position: absolute;
+      background-color: lightgray;
+      max-width: 200px;
+      padding: 5px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 80%;
+      z-index: 1000;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+    /* Tooltip for proper names gets a light blue background */
+    .tooltip-box.light-blue {
+      background-color: lightblue;
+    }
+    /* Indicate that a word has a gloss */
+    .tooltip-word {
+      cursor: pointer;
+      border-bottom: 1px dotted #000;
+    }
+  </style>
 </head>
 <body>
+  <p>
+    <span class="tooltip-word" data-definition="Structures built to enclose an area." data-example="The <b>walls</b> protected the castle.">Walls</span> and 
+    <span class="tooltip-word" data-definition="The act of constructing walls." data-example="Ancient builders practiced <b>wall-building</b> to protect cities.">wall-building</span> 
+    have <span class="tooltip-word" data-definition="Performed an action or function." data-example="He <b>played</b> a key role in the game.">played</span> 
+    a 
+    <span class="tooltip-word" data-definition="To a high degree." data-example="She was <b>very</b> excited.">very</span> 
+    <span class="tooltip-word" data-definition="Of great significance." data-example="It was an <b>important</b> decision.">important</span> 
+    <span class="tooltip-word" data-definition="A function or part played by someone or something." data-example="He had a significant <b>role</b> in the play.">role</span> 
+    in 
+    <span class="tooltip-word" data-definition="Relating to China or its culture." data-example="The <b>Chinese</b> festival was colorful.">Chinese</span> 
+    <span class="tooltip-word" data-definition="The customs, arts, and social behavior of a society." data-example="Her <b>culture</b> was rich and diverse.">culture</span>.
+  </p>
+  <p>
+    These 
+    <span class="tooltip-word" data-definition="Human beings considered collectively." data-example="The <b>people</b> gathered in the square.">people</span>, 
+    from the 
+    <span class="tooltip-word" data-definition="Not bright; faint." data-example="The room was <b>dim</b> during the evening.">dim</span> 
+    <span class="tooltip-word" data-definition="Light fog or fine droplets of water in the air." data-example="Early morning <b>mists</b> covered the valley.">mists</span> 
+    of 
+    <span class="tooltip-word" data-definition="The period before recorded history." data-example="Scientists study <b>prehistory</b> through fossils.">prehistory</span> 
+    have been 
+    <span class="tooltip-word" data-definition="Having a notable awareness or focus on walls." data-example="The designer was <b>wall-conscious</b> in her approach.">wall-conscious</span>; 
+    from the 
+    <span class="tooltip-word" data-definition="Relating to the later part of the Stone Age." data-example="Archaeologists study <b>Neolithic</b> tools.">Neolithic</span> 
+    <span class="tooltip-word" data-definition="A length or portion of time." data-example="The Renaissance was a remarkable <b>period</b> in history.">period</span> 
+    – 
+    <span class="tooltip-word" data-definition="At what time." data-example="I wonder <b>when</b> the event will start.">when</span> 
+    <span class="tooltip-word" data-definition="Defensive walls or embankments around a fortification." data-example="The castle's <b>ramparts</b> were impressive.">ramparts</span> 
+    of 
+    <span class="tooltip-word" data-definition="Struck repeatedly with force." data-example="The <b>pounded</b> metal showed signs of wear.">pounded</span> 
+    <span class="tooltip-word" data-definition="The soil or ground." data-example="The farmer tilled the <b>earth</b> in the field.">earth</span> 
+    were 
+    <span class="tooltip-word" data-definition="Employed for a purpose." data-example="The tool was <b>used</b> effectively.">used</span> 
+    - to the 
+    <span class="tooltip-word" data-definition="Relating to the political ideology of communism." data-example="The <b>Communist</b> party influenced many policies.">Communist</span> 
+    <span class="tooltip-word" data-definition="A forcible overthrow of a government or social order." data-example="The <b>Revolution</b> reshaped the nation.">Revolution</span>, 
+    <span class="tooltip-word" data-definition="Vertical structures that define boundaries." data-example="The ancient <b>walls</b> still stand today.">walls</span> 
+    were an 
+    <span class="tooltip-word" data-definition="Absolutely necessary; extremely important." data-example="Water is <b>essential</b> for survival.">essential</span> 
+    <span class="tooltip-word" data-definition="A component or piece of a whole." data-example="Every <b>part</b> contributes to the machine.">part</span> 
+    of any 
+    <span class="tooltip-word" data-definition="A small settlement or community." data-example="The <b>village</b> was peaceful and quaint.">village</span>.
+  </p>
+  <p>
+    Not only 
+    <span class="tooltip-word" data-definition="Urban areas that are smaller than cities." data-example="The <b>towns</b> were charming and historic.">towns</span> 
+    and 
+    <span class="tooltip-word" data-definition="Small communities typically found in rural areas." data-example="The <b>villages</b> were surrounded by nature.">villages</span>; 
+    the 
+    <span class="tooltip-word" data-definition="Buildings where people live." data-example="The <b>houses</b> were neatly arranged along the street.">houses</span> 
+    and the 
+    <span class="tooltip-word" data-definition="Structures dedicated to religious worship." data-example="The <b>temples</b> were beautifully decorated.">temples</span> 
+    within them were 
+    <span class="tooltip-word" data-definition="In a way that is not clearly defined or understood." data-example="He <b>somehow</b> managed to solve the problem.">somehow</span> 
+    <span class="tooltip-word" data-definition="Enclosed or surrounded by walls." data-example="They <b>walled</b> the garden for privacy.">walled</span>, and the 
+    <span class="tooltip-word" data-definition="Buildings for human residence." data-example="The <b>houses</b> were built in a row.">houses</span> 
+    <span class="tooltip-word" data-definition="In addition; too." data-example="She <b>also</b> joined the team.">also</span> 
+    <span class="tooltip-word" data-definition="Owned or possessed." data-example="He <b>had</b> a collection of books.">had</span> no 
+    <span class="tooltip-word" data-definition="Openings in a wall or building to let in light and air." data-example="The <b>windows</b> provided a great view.">windows</span> 
+    <span class="tooltip-word" data-definition="Providing a view over something." data-example="The building <b>overlooking</b> the river was modern.">overlooking</span> the 
+    <span class="tooltip-word" data-definition="A public road in a town or city." data-example="The <b>street</b> was bustling with activity.">street</span>, 
+    <span class="tooltip-word" data-definition="As a result; therefore." data-example="He was late, <b>thus</b> missing the start.">thus</span> 
+    <span class="tooltip-word" data-definition="Providing or conveying." data-example="The announcement was <b>giving</b> hope to everyone.">giving</span> the 
+    <span class="tooltip-word" data-definition="An emotional state or sensation." data-example="There was a <b>feeling</b> of joy in the air.">feeling</span> 
+    of 
+    <span class="tooltip-word" data-definition="Moving without a fixed course." data-example="They were <b>wandering</b> through the park.">wandering</span> 
+    <span class="tooltip-word" data-definition="In a circular or surrounding manner." data-example="We walked <b>around</b> the block.">around</span> a 
+    <span class="tooltip-word" data-definition="Extremely large." data-example="The <b>huge</b> tree towered above all others.">huge</span> 
+    <span class="tooltip-word" data-definition="A complex network of paths." data-example="The garden was like a <b>maze</b> of hedges.">maze</span>.
+  </p>
 
-<div id="tooltip"></div>
+  <!-- Include ResponsiveVoice TTS library -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script>
+    // Close any open tooltip when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.tooltip-box') && !e.target.closest('.tooltip-word')) {
+        removeTooltip();
+      }
+    });
 
-<p style="text-align: justify;">
-    <!-- 
-       Each relevant word (noun, verb, adjective, adverb) is wrapped in a span with onmouseover and onmouseout events.
-       The function showTooltip(event, pos, definition, example, bgColor) is defined below.
-       Proper names (brand names) use lightblue; all others use lightyellow.
-    -->
-
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'اتخذ قراراً بشأن أمر ما', 'قرّرتُ الدراسة الآن.', 'lightyellow')" 
-      onmouseout="hideTooltip()">قرّرت</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'ظرف', 'في ذلك الوقت', 'سافرت حينها إلى بيروت.', 'lightyellow')" 
-      onmouseout="hideTooltip()">حينها</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الذهاب إلى مكان أو شخص', 'قمت بزيارة صديقي.', 'lightyellow')" 
-      onmouseout="hideTooltip()">زيارة</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'شخص قريب تربطه بك علاقة ود', 'صديقي هو مصدر دعمي.', 'lightyellow')" 
-      onmouseout="hideTooltip()">صديق</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'مرحلة العمر من الولادة حتى البلوغ', 'أتذكر أيام الطفولة بسعادة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الطفولة</span> 
-    الذي 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'تحوّل أو تغيّر إلى حالة جديدة', 'أصبح الجوّ بارداً.', 'lightyellow')" 
-      onmouseout="hideTooltip()">أصبح</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'شخص مختص بعلاج المرضى', 'ذهبت إلى الطبيب لإجراء فحص.', 'lightyellow')" 
-      onmouseout="hideTooltip()">طبيب</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'إجراء يهدف لتحسين الشكل أو المظهر', 'تجميل الوجه يزيد الثقة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">تجميل</span>،
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'قدّم رأياً أو نصيحة', 'فاقترح صديقي الذهاب للتنزه.', 'lightyellow')" 
-      onmouseout="hideTooltip()">فاقترح</span> 
-    عليَّ 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'إدخال مادة سائلة إلى الجسم بواسطة إبرة', 'يجب أن تتم عملية الحقن بحذر.', 'lightyellow')" 
-      onmouseout="hideTooltip()">حقن</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم علم (علامة تجارية)', 'اسم تجاري لمادة تستخدم لإزالة التجاعيد', 'تستخدم البوتوكس في العيادات التجميلية.', 'lightblue')" 
-      onmouseout="hideTooltip()">البوتوكس</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'جعل الشيء أقل', 'نمارس الرياضة للتقليل من الوزن.', 'lightyellow')" 
-      onmouseout="hideTooltip()">للتقليل</span> 
-    من 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'بروز أو تجلّي شيء', 'أخفيتُ ظهور العيب بالمكياج.', 'lightyellow')" 
-      onmouseout="hideTooltip()">ظهور</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'خطوط وثنيات تظهر على الجلد', 'مع التقدم في العمر تزداد التجاعيد.', 'lightyellow')" 
-      onmouseout="hideTooltip()">التجاعيد</span>،
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'نطق أو عبّر بالكلام', 'قال المعلم: انتبهوا للدرس.', 'lightyellow')" 
-      onmouseout="hideTooltip()">وقال</span> 
-    لي 
-    إن 
-    هذه 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'خطوات أو تدابير متخذة لتحقيق هدف', 'يجب اتباع الإجراءات القانونية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الإجراءات</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'ما يعتقده الشخص أو يشعر به', 'برأيي، الحل الأفضل هو الصبر.', 'lightyellow')" 
-      onmouseout="hideTooltip()">برأيه</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'تحصل أو تحدث', 'تكون الأمور بخير إن تحلينا بالصبر.', 'lightyellow')" 
-      onmouseout="hideTooltip()">تكون</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'يدل على زيادة أو كثرة', 'هذا الكتاب أكثر فائدةً من غيره.', 'lightyellow')" 
-      onmouseout="hideTooltip()">أكثر</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'قدرة الشيء على إحداث التأثير المطلوب', 'فاعلية الدواء عالية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">فاعلية</span> 
-    عند 
-    البدء 
-    فيها 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'ظرف', 'في وقت باكر أو مبكر', 'استيقظت مبكراً اليوم.', 'lightyellow')" 
-      onmouseout="hideTooltip()">مبكراً</span>.
-    لم 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'أقتصر على شيء ولا أطلب المزيد', 'أكتفي بقراءة كتاب واحد.', 'lightyellow')" 
-      onmouseout="hideTooltip()">أكتفِ</span> 
-    بذلك، 
-    بل 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'استخدام الفرصة بأفضل طريقة', 'استغللت وقت الفراغ للدراسة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">استغللت</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'ظرف', 'كذلك أو بالإضافة', 'هو يتكلم الإنجليزية وأيضاً الفرنسية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">أيضاً</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'ما يحتاجه الإنسان من متطلبات', 'حاجتي للراحة كبيرة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">حاجتي</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'إجراء طبي أو منهجي محدد', 'خضعتُ لعملية جراحية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">لعملية</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'رفع أو نزع شيء من مكانه', 'تمت إزالة البقعة بالماء.', 'lightyellow')" 
-      onmouseout="hideTooltip()">إزالة</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'جزء زائد من النسيج في الأنف أو الحلق', 'أجريت عملية استئصال اللحمية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">اللحمية</span> 
-    من 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'عضو في الوجه للتنفس والشم', 'تنظيف الأنف ضروري للصحة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الأنف</span> 
-    و
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'فعل الشيء أو نهض للقيام به', 'وقمت بعمل الواجب.', 'lightyellow')" 
-      onmouseout="hideTooltip()">قمت</span> 
-    في 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الزمن أو المدة التي تقاس بالساعات والدقائق', 'الوقت ثمين.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الوقت</span> 
-    نفسه 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'إجراء أو فعل له خطوات', 'العملية التجميلية تحتاج إلى طبيب مختص.', 'lightyellow')" 
-      onmouseout="hideTooltip()">بعملية</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'متعلق بالتجميل وتحسين المظهر', 'العمليات التجميلية شائعة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">تجميلية</span> 
-    له، 
-    مما 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'سبّب لي حالة أو وضعاً', 'ذلك جعلني سعيداً.', 'lightyellow')" 
-      onmouseout="hideTooltip()">جعلني</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'أحس بشيء', 'أشعر بالألم في رأسي.', 'lightyellow')" 
-      onmouseout="hideTooltip()">أشعر</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الاطمئنان واليقين بالنفس', 'أجبت على الأسئلة بثقة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">بثقة</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'ذات الإنسان أو روحه', 'يجب أن يعرف المرء نفسه.', 'lightyellow')" 
-      onmouseout="hideTooltip()">نفس</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'زائدة عما هو موجود', 'أحتاج إلى موارد إضافية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">إضافية</span> 
-    أمام 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'جهاز أو سطح لعرض الصور والفيديو', 'أنظر إلى الشاشة باستمرار.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الشاشة</span>.
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'حكاية أو رواية لأحداث', 'قصتي طويلة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">قصتي</span> 
-    هذه 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'ترمز أو تعكس شيئاً', 'هذه اللوحة تمثل الطبيعة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">تمثل</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'قسم أو قطعة من كل', 'هذا الفصل جزء من الكتاب.', 'lightyellow')" 
-      onmouseout="hideTooltip()">جزءاً</span> 
-    من 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'حدث أو أمر بارز يمكن ملاحظته', 'تعد العواصف ظاهرة طبيعية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">ظاهرة</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'مستمرة في التطور أو التزايد', 'الأزمة آخذة في التفاقم.', 'lightyellow')" 
-      onmouseout="hideTooltip()">آخذة</span> 
-    في 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'التوسع أو الامتداد في نطاق معين', 'شهدت الفكرة انتشاراً واسعاً.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الانتشار</span> 
-    بين 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الذكور البالغون', 'يحظى الرجال بحقوق وواجبات.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الرجال</span> 
-    في 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الأرض وما عليها', 'العالم كبير ومتعدد الثقافات.', 'lightyellow')" 
-      onmouseout="hideTooltip()">العالم</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'منسوب إلى العرب أو متعلق بهم', 'العالم العربي مليء بالتنوع.', 'lightyellow')" 
-      onmouseout="hideTooltip()">العربي</span> 
-    وحول 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الأرض وما عليها', 'العالم كبير ومتعدد الثقافات.', 'lightyellow')" 
-      onmouseout="hideTooltip()">العالم</span>،
-    حيث 
-    لم 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'فعل', 'لم يعد = لم يصبح الأمر كذلك', 'لم تعد الفواكه رخيصة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">تعد</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'خطوات أو تدابير متخذة لتحقيق هدف', 'يجب اتباع الإجراءات القانونية.', 'lightyellow')" 
-      onmouseout="hideTooltip()">الإجراءات</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'صفة', 'متعلق بالتجميل وتحسين المظهر', 'العمليات التجميلية شائعة.', 'lightyellow')" 
-      onmouseout="hideTooltip()">التجميلية</span> 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'حصر الشيء على فئة أو شخص', 'لم يعد التعليم حكراً على الأغنياء.', 'lightyellow')" 
-      onmouseout="hideTooltip()">حكراً</span> 
-    على 
-    <span 
-      class="word" 
-      onmouseover="showTooltip(event, 'اسم', 'الإناث البالغات', 'النساء شقائق الرجال.', 'lightyellow')" 
-      onmouseout="hideTooltip()">النساء</span>.
-</p>
-
-<script>
-    // A simple JS tooltip system using one shared #tooltip div
-    function showTooltip(evt, pos, definition, example, bgColor) {
-        const tooltip = document.getElementById("tooltip");
-        tooltip.style.display = "block";
-        tooltip.style.backgroundColor = bgColor;
-        tooltip.style.left = (evt.pageX + 10) + "px";
-        tooltip.style.top = (evt.pageY + 10) + "px";
-        tooltip.innerHTML = 
-            "<strong>" + pos + ":</strong> " + definition + "<br/>" +
-            "<em>مثال: " + example + "</em>";
+    function removeTooltip() {
+      const existing = document.querySelector('.tooltip-box');
+      if (existing) {
+        existing.parentNode.removeChild(existing);
+      }
     }
 
-    function hideTooltip() {
-        const tooltip = document.getElementById("tooltip");
-        tooltip.style.display = "none";
-        tooltip.innerHTML = "";
+    // Create and display a tooltip near the clicked word
+    function createTooltip(target, contentHTML, word, isProper) {
+      removeTooltip();
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip-box' + (isProper ? ' light-blue' : '');
+      tooltip.innerHTML = contentHTML;
+      
+      // Create a sound button that uses ResponsiveVoice TTS (US English)
+      const soundButton = document.createElement('button');
+      soundButton.textContent = '🔊';
+      soundButton.style.marginTop = '5px';
+      soundButton.onclick = function(e) {
+        e.stopPropagation();
+        responsiveVoice.speak(word, "US English Female");
+      };
+      tooltip.appendChild(document.createElement('br'));
+      tooltip.appendChild(soundButton);
+      
+      document.body.appendChild(tooltip);
+      // Position tooltip relative to the target element
+      const rect = target.getBoundingClientRect();
+      tooltip.style.top = (window.scrollY + rect.bottom + 5) + 'px';
+      tooltip.style.left = (window.scrollX + rect.left) + 'px';
     }
-</script>
 
+    // Handler to show tooltip when a glossed word is clicked
+    function showTooltip(e) {
+      e.stopPropagation();
+      const target = e.currentTarget;
+      // Check for special cases: proper name or location (data-proper or data-location)
+      const isProper = target.getAttribute('data-proper') === 'true';
+      const isLocation = target.getAttribute('data-location') === 'true';
+      const word = target.textContent;
+      let contentHTML = '';
+      
+      if (isProper) {
+        // Tooltip for well-known person (no example)
+        const bio = target.getAttribute('data-bio');
+        const wikiUrl = target.getAttribute('data-wiki');
+        contentHTML = '<div>' + bio + '</div>' +
+                      '<div><img src="' + wikiUrl + '" alt="' + word + '" style="max-width:100%;"></div>';
+      } else if (isLocation) {
+        // Tooltip for location (no example)
+        const description = target.getAttribute('data-description');
+        const wikiUrl = target.getAttribute('data-wiki');
+        contentHTML = '<div>' + description + '</div>' +
+                      '<div><img src="' + wikiUrl + '" alt="' + word + '" style="max-width:100%;"></div>';
+      } else {
+        // Regular content word tooltip: definition and example (with the word in bold in the example)
+        const definition = target.getAttribute('data-definition');
+        const example = target.getAttribute('data-example');
+        contentHTML = '<div>' + definition + '</div>' +
+                      '<div>Example: ' + example + '</div>';
+      }
+      
+      createTooltip(target, contentHTML, word, isProper);
+    }
+
+    // Attach click event listeners to all glossed content words
+    const tooltipWords = document.querySelectorAll('.tooltip-word');
+    tooltipWords.forEach(function(el) {
+      el.addEventListener('click', showTooltip);
+    });
+  </script>
 </body>
 </html>
